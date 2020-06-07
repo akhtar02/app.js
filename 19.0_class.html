@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        class vehicle{
+            static body="metal"
+
+            constructor (name,wheel,transmission,steering){
+                this.wheel=wheel;
+                this.transmission=transmission;
+                this.steering=steering;
+            }
+
+            desc = function(){
+                console.log(`This is a ${this.body} bodied, ${this.wheel} wheeled vehicle, with a/an ${this.transmission} transmission and ${this.steering} steering`)
+            }
+        }
+
+        let ford=new vehicle("Ford",4,"automatic","power")
+        ford.desc();
+        console.log(vehicle.body) //Will allow access to static property
+        console.log(ford.body) //Will not be able to access to static property as this is an instance
+
+        //-------------------------------------------------------------------------------------
+        //--------------------------------INHERITANCE------------------------------------------
+        //-------------------------------------------------------------------------------------
+        class Car extends vehicle{
+            constructor(name,wheel,doors,transmission,steering,body){
+                super(name,wheel,transmission,steering)//All inherited properties go here
+                this.doors=doors//new property added
+                this.body=body//new property added.this is already defined as static in parent class
+            }
+        }
+
+        let BMW = new Car("BMW",4,2,"automatic","power","fiber")
+        BMW.desc()
+        console.log(`It is a ${BMW.doors} car`)//New property is working
+        console.log(`It has a ${BMW.body} body, generally cars have a ${Car.body} body`)//1st body recalls the property for the instance, second recalls it for the static defined in parent inherited by Cars
+
+    </script>
+</body>

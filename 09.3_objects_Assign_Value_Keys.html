@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        let car ={
+            wheel: 4,
+            doors: 4,
+            transmission: "automatic",
+            steering: "power",
+
+            desc : function(){
+                console.log(`This is a ${this.wheel} wheeled vehicle, having ${this.doors} doors, with a/an ${this.transmission} transmission and ${this.steering} steering`)
+            }
+        }
+
+        let Bike ={
+            make: "Harley Davidson",
+            wheel: 2,
+            transmission: "manual",
+            
+
+        }
+
+        //Object.assign allows to combine 2 or more objects and create a new object by merging their properties
+        let vehicle= Object.assign(car,Bike)//Incase of same properties last objects values will overwrite first objects values(so bike will overwrite car)
+        
+        console.log("make:", vehicle.make)
+        console.log("wheel:", vehicle.wheel)
+        console.log("doors:", vehicle.doors)
+        console.log("transmission:", vehicle.transmission)
+        console.log("steering:", vehicle.steering)
+        vehicle.desc()
+        
+        //Object.keys creates an array of all keys/properties of the object
+        let vehicleKeys= Object.keys(vehicle)
+        console.log(vehicleKeys)
+
+        //Object.values creates an array of all values for all keys/properties of the object
+        let vehicleValues= Object.values(vehicle)
+        console.log(vehicleValues)
+        
+    </script>
+</body>

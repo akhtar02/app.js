@@ -1,0 +1,87 @@
+<!-- FOR IN LOOP
+
+can be applied on both arrays and objects.
+Its not recommended to read arrays as in Javascript, array is an object.
+because In case the code adds a property to the array object then forIn will count that as well.
+For Sparse arrays i.e. without values in certain indexes it doesnot count undefined.  -->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+       
+        /************************************************** */
+        // Try any part one at a time
+
+
+        const myObject = { firstName: "Syed", lastName: "Atif", degrees: 2 }
+
+        /************************************************** */
+
+
+        // OLD "for" loop applied on OBJECT
+        for (let i = 0; i < 3; i++) {
+            console.log(myObject[i])
+        }
+        // RESULT:
+        // Undefined
+        // Undefined
+        // undefined
+
+
+
+        /************************************************** */
+        // New "for in" loop applied on OBJECT property values
+
+        // for (i in myObject) {
+        //     console.log(myObject[i])
+        // }
+
+        //RESULT
+        // Atif
+        // Saeed
+        // 2
+
+
+
+        /************************************************** */
+        // "For in" loop applied on OBJECT keys
+
+        // for (i in myObject) {
+        //     console.log(i)
+        // }
+
+        //RESULT
+        // firstName
+        // lastName
+        // degrees
+
+
+
+        /************************************************** */
+        // "For in" loop on array
+
+        // const myArray = ["a", "b", "c", "d", "e", "f", "g", "h"]
+
+
+        // for ( i in myArray) {
+        //    console.log(myArray[i]);
+        // }
+        //RESULT
+        // a
+        // b
+        // c
+        // d
+        // e
+        // f
+        // g
+        // h
+
+
+        /************************************************ */
+
+    </script>
+</body>

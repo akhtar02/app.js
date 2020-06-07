@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        var sub = "I am doing Math"
+        function outerfunc() {
+            var sub="I am doing Mathmatics"
+            function innerfunc() {
+                return (sub);
+            }
+            return innerfunc();//we 
+        }
+        document.write(outerfunc());
+        //document.write(innerfunc());//not work
+
+
+
+        // var sub = prompt("Enter Subject:")
+        // function outerfunc(subject) {
+        //     document.write("I know what I am doing <br />");
+        //     function innerfunc(sub_rec) {
+        //         return (`I am studying ${sub_rec} `);//always take care of the type of single quotes
+        //     }
+        //     return innerfunc(subject);
+        // }
+        // //document.write(outerfunc(sub));
+        // document.write(innerfunc(sub));//not work
+
+
+
+        // const outerfunc = (subject) => {
+        //     document.write("I know what I am doing <br />");
+        //     const innerfunc = (sub_rec) => {
+        //         return (`I am studying ${sub_rec} `);//always take care of the type of single quotes
+        //     }
+        //     return innerfunc(subject);
+        // }
+        // //document.write(outerfunc(sub));
+        // document.write(innerfunc(sub));
+
+    </script>
+</body>

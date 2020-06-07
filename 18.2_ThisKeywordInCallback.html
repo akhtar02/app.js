@@ -1,0 +1,69 @@
+<!-- SCOPE OF This. KEYWORD IN A callback function(see 1,2,3 for output understanding)
+http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/ -->
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+           
+            var clientData = {
+                fullName: "Not Set",
+                // setUserName is a method on the clientData object
+                setUserName: function (firstName, lastName) { //setUserName is local to clientData
+                    // this refers to the fullName property in this object
+                    this.fullName = firstName + " " + lastName;
+                }
+            }
+
+            function getUserInput(firstName, lastName, callback) {//getUserInput is a global function
+                // Do other stuff to validate firstName/lastName here
+                let fullName="Global Func"
+                // Now save the names
+                callback(firstName, lastName);// becuase object method is called from another function the THIS in the definition will refer to global
+                alert(fullName) //1st display - GlobalFunc - as it refers to local
+                alert(this.fullName);//2nd display - Barrack Obama - this.fullname will refer to global whereas fullName 
+            }
+/*************************************************************************************/    
+//if clientData.UserName() is called directly then THIS is binded to object Clientdata. 
+//As a result Clientdata.fullName is reset-uncomment below code to check********/
+                // clientData.setUserName("atif","saeed"); 
+                // alert(clientData.fullName);
+                //alert(fullName)//see how the output changes after removing this from line 16
+
+/*************************************************************************************/    
+
+//if getUserInput() calls clientData.setUserName() then clientData.fullName is NOT reset
+//As getUserInput() is a global function and therefore THIS is binded to global variable 
+//this.fullName eventhough written inside clientData.setUserName() represents the global fullName ********/
+
+                getUserInput("Barack", "Obama", clientData.setUserName);
+
+                alert(clientData.fullName);//3rd Display - Not Set
+
+                // The fullName property was initialized on the window object
+                alert(window.fullName); // 4th Display - Barack obama - refers to Global Variable
+
+//CONCLUSION
+// Can we say:
+// in case of method call from objects THIS is binded to object scope
+// in case of global function call, THIS is binded to global scope
+// behaviour of this and without this is completely different b/w an object method and a regular function
+
+// or
+// It may also help to simply state the rules: 
+// 1. this refers to the global (window) object unless 
+// 2. the function is invoked as a method(a regular function inside an object) or unless 
+// 3. The function is invoked with new or unless 
+// 4. “Use strict” is in play causing it to be undefined, or unless 
+// 5. it’s set with call or apply or unless 
+// 6. ES6 stuff.
+
+
+//THERE IS A SOLUTION FOR THIS BEHAVIOUR USING CALLBACK AND APPLY, LOOK AT THE LINK
+
+    </script>
+</body>
+
+

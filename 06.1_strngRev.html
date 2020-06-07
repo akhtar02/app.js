@@ -1,0 +1,26 @@
+<!--
+Write a javascript function named reverse which takes a string argument and returns the reversed string.-->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        origStrng=prompt("Enter String:");
+        var newStrng = revString(origStrng);
+        document.write("Original string was: " + origStrng + "<br />")
+        document.write("New string is: " + newStrng + "<br />")
+        
+        function revString(strng){
+            var splt = strng.split('');
+            document.write("1 - String split to array" + splt + "<br />");
+            var rev = splt.reverse();
+            document.write("Array is reversed" + rev + "<br />");
+            var joind = rev.join('');
+            document.write("Array is joined" + joind + "<br />");
+            return(joind);
+        }    
+    </script>
+</body>

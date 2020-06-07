@@ -1,0 +1,22 @@
+<!--
+Write a program to store student scores in an array & sort the array in ascending order using Array’s sort method.
+Scores of students:320,230,480,120
+Ordered score of students: 120,230,320,480
+make sure it doesnt sort numbers incorrectly using 25,35,250.
+-->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        var container;
+//        var scores=[320,230,480,120];
+        var scores=[25,35,250];
+        document.write("Scores of students:" + scores);
+        scores.sort(function(a,b){return a-b});
+        document.write("</br>Ordered score of students:" + scores);
+    </script>
+</body>

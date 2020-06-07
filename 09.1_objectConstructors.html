@@ -1,0 +1,42 @@
+<!-- Objects can be declared directly, if you want to declare multiple instances for an object you will need to
+     use a constructor function.
+     This construction function is already built into classes     
+-->
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        // Below will create only 1 car, I will have to write whole code again for another one.For this we use constructor functions
+        // let car ={
+        //     wheel: 4,
+        //     doors: 4,
+        //     transmission: "automatic",
+        //     steering: "power",
+
+        //     desc : function(){
+        //         console.log(`This is a ${this.wheel} wheeled vehicle, having ${this.doors} doors, with a/an ${this.transmission} transmission and ${this.steering} steering`)
+        //     }
+        // }
+
+        function car(name,wheel,doors,transmission,steering){
+            this.name=name;
+            this.wheel=wheel;
+            this.doors=doors;
+            this.transmission=transmission;
+            this.steering=steering;
+            this.desc = function(){
+                console.log(`This is ${this.name}, a ${this.wheel} wheeled vehicle, having ${this.doors} doors, with a/an ${this.transmission} transmission and ${this.steering} steering`)
+            };
+            
+        }
+        let ford = new car("Ford",4,4,"automatic","power")
+        ford.desc()
+
+        let suzuki = new car("suzuki",4,4,"manual","manual")
+        suzuki.desc()
+           
+    </script>
+</body>

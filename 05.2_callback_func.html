@@ -1,0 +1,44 @@
+<!--
+    A higher order functons is a function that either returns or receives a functioon as an argument is called a high order function
+    Any function that is passed as an argument is called a callback function.A callback function is usually an anonymous function.Anonymous functions cannot be defined separately as we cannot call them because they have no name. So they are usually passed as arguments
+    https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
+-->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        var sub = prompt("Enter Subject:")
+        
+        //Below is doHomeWork Function definition.Its a higher order function as it receives a function as an argument
+        doHomeWork = (subject,callback) => {  
+            document.write(`Doing my ${subject} homework`);
+            callback();
+        }
+
+        //Below is the doHomeWork Function with an anonymosus callback function being passed,
+        doHomeWork(sub,function(){document.write("<br /> Finished my homework")});
+
+        //but callback functions don’t always have to be defined in our function call.
+        //They can be defined elsewhere in our code. See below example which will have the same result.
+        
+         
+        
+        // var sub = prompt("Enter Subject:")
+        
+        // doHomeWork = (subject,callback_rec) => {  //This is doHomeWork Function definition
+        //     document.write(`Doing my ${subject} homework`);
+        //     callback_rec();
+        // }
+
+        // function callback(){document.write("<br /> Finished my homework")}
+    
+        // doHomeWork(sub, callback);
+
+
+
+    </script>
+</body>

@@ -1,0 +1,22 @@
+<!--
+A visitor visits an online clothing store www.xyzClothing.com . Write a script to store in variables the following information: a. Visitor’s name b. Product title c. Quantity i.e. how many products a visitor wants to order Show the following message in your browser: “John Doe ordered 5 T-shirt(s) on XYZ Clothing store”.
+-->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        var DOB = prompt("Enter date in the format June 18, 2012");
+        var dateOB = new Date(DOB);
+        alert(dateOB);
+        var c_date= new Date();
+        alert(c_date);
+        var diff = c_date.getTime()-dateOB.getTime();
+        alert(diff);
+        var age = diff/(1000*60*60*24*365);
+        document.write("You are "+ age +" years old");
+    </script>
+</body>

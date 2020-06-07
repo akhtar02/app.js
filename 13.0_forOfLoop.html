@@ -1,0 +1,35 @@
+<!-- "For of" loop// works on iterable variables only i.e. arrays and strings. Doe not work for objects -->
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        const digits = ["a", "b", "c", "d", "e", "f", "g", "h"]
+        const myname = "atif"
+
+        for (const index of digits) {
+        console.log(index);
+        }
+        for (const index of myname) {
+        console.log(index);
+        }
+
+        //Result:
+        // a
+        // b
+        // c
+        // d
+        // e
+        // f
+        // g
+        // h
+        // a
+        // a
+        // t
+        // i
+        // f
+
+    </script>
+</body>

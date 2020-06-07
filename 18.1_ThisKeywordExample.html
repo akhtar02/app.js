@@ -1,0 +1,85 @@
+<!-- THIS keyword
+
+Article to read
+https://alligator.io/js/this-keyword/
+https://codeburst.io/all-about-this-and-new-keywords-in-javascript-38039f71780c
+https://medium.com/tfogo/advantages-and-pitfalls-of-arrow-functions-a16f0835799e
+https://medium.freecodecamp.org/learn-es6-the-dope-way-part-ii-arrow-functions-and-the-this-keyword-381ac7a32881(
+
+
+3 things to watch in the below example
+1-  -Why does ‘this’ bind to the window object? Because ‘this’, always references the owner of the function it is in, 
+    for this case — since it is now out of scope — the window/global object.
+    When it is inside of an object’s method — the function’s owner is the object. 
+    Thus the ‘this’ keyword is bound to the object. 
+    Yet when it is inside of a function, either stand alone or within another method,
+    it will always refer to the window/global object.(see Callback Example and Function Example)
+    (Also see 4th link to understand point1)
+2-  Usage of var vs let will define global or local scope.As a side note, variables declared with let or const 
+    at the global level are not stored in the global object, but instead in an inaccessible declarative environment 
+    record(see link 1)
+3-  The scope of this is different in an arrow function vs a function defined by function keyword in an object.
+    This is why arrow functions are useless in obect methods
+
+or
+It may also help to simply state the rules: 
+1. this refers to the global (window) object unless 
+2. the function is invoked as a method(a regular function inside an object) or unless 
+3. The function is invoked with new or unless 
+4. “Use strict” is in play causing it to be undefined, or unless 
+5. it’s set with call or apply or unless 
+6. ES6 stuff.
+
+-->
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+            /************************WITH This****************************** */
+            let name = "Saeed"//var makes it global in scope, if you use let the result of 2nd function will be undefined.(see link 1)
+
+            let abc = {
+                        name: "Atif",
+                        welcomeMsg: function () {
+                                            return "Welcome " + this.name
+                        },
+
+    //arrow functions don’t bind this to the object that called them. 
+    //They just use the value of this in the scope in which they were defined.i.e. the lexical scope 
+    //In this case, that’s the global object. So arrow functions are unusable for object methods!                  
+                        welcomeMsgArrow: () => {
+                                            return "Welcome " + this.name  
+
+                        }
+            }
+            let msg = abc.welcomeMsg()//Atif 
+            console.log(msg)
+
+            msg = abc.welcomeMsgArrow()//Saeed .Incase of let it will only show "Welcome" as let only declares it globally
+            console.log(msg)
+
+
+            /************************WITHOUT This****************************** */
+            // var name = "Saeed"//Here using let will not make a difference
+
+            // let abc = {
+            //             name: "Atif",
+            //             welcomeMsg: function () {
+            //                                 return "Welcome " + name
+            //             },
+                
+                
+            //             welcomeMsgArrow: () => {
+            //                                 return "Welcome " + name
+            //             }
+            // }
+            // let msg = abc.welcomeMsg()      //Saeed 
+            // console.log(msg)
+
+            // msg = abc.welcomeMsgArrow()     //Saeed
+            // console.log(msg)
+    </script>
+</body>

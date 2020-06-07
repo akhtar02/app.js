@@ -1,0 +1,45 @@
+<!-- VARIABLE HOISTING
+https://scotch.io/tutorials/understanding-hoisting-in-javascript
+no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.
+Of note however, is the fact that the hoisting mechanism only moves the declaration. The assignments are left in place. -->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+       
+       
+        // Try any part one at a time
+
+        // var myname;         // Declare Variable
+        // myname = 'Atif';   // Initialize variable
+        // console.log(myname) // result: Atif
+
+
+
+        /*********************************** */
+
+        // var myname;          // Declare Variable
+        // console.log(myname)  // result: Undefined as assignment is not hoisted
+        // myname = 'Atif';    // Initialize variable
+
+
+
+        /*********************************** */
+
+        // console.log(myname)  // result: Undefined
+        // myname = 'Atif';    // Initialize variable as assignment is not hoisted
+        // var myname;          // Declare Variable
+
+
+
+        /*********************************** */
+
+        // console.log(myname)  // result: ERROR: myname is not defined, because of there was a declaration it would have been hoisted.So outpo=ut would have shown undefined
+        //myname = 'Atif';     // Initialize variable
+
+    </script>
+</body>

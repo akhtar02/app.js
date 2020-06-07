@@ -1,0 +1,69 @@
+<!-- ARROW FUNCTIONS
+https://medium.com/tfogo/advantages-and-pitfalls-of-arrow-functions-a16f0835799e(also see this example in coding)
+
+
+Function expressions are best for object methods.
+Arrow functions are best for callbacks or methods like map, reduce, or forEach. -->
+
+
+<!DOCTYPE html>
+<head lang="en">
+<title>Task</title>
+</head>
+<body>
+    <script>
+        /************************************************** */
+        // Try any part one at a time
+
+        // Normal function declaration
+        function myFunction(text) {
+            let name = "Welcome " + text
+            return name
+        }
+
+        let msg = myFunction("Atif")
+        console.log(msg)  // Result: Welcome Atif
+
+
+
+        /************************************************** */
+
+        //Function expression
+        // const myFunction = function (text) {
+        //     let name = "Welcome " + text
+        //     return name
+        // }
+
+        // let msg = myFunction("Atif")
+        // console.log(msg)  // Result: Welcome Atif
+
+
+        /************************************************** */
+
+        // Arrow function
+        // const myFunction = text => {
+        //     let name = "Welcome " + text
+        //     return name
+        // }
+        // let msg = myFunction("Atif")
+        // console.log(msg)  // Result: Welcome Atif
+
+
+        /************************************************** */
+
+        // Arrow function
+        // const myFunction = text => "Welcome " + text
+
+        // let msg = myFunction("Atif")
+        // console.log(msg)  // Result: Welcome Atif
+
+
+        /************************************************** */
+
+        // Arrow function
+        // const myFunction = (fname,lname) => `Welcome ${fname} ${lname}`
+
+        // let msg = myFunction("Atif","Saeed")
+        // console.log(msg)  // Result: Welcome Atif Saeed
+    </script>
+</body>
