@@ -71,6 +71,20 @@ Declare and Initialize an array and store available education qualifications in 
         colors.splice(start,total);
         document.write("</br></br>The array has been revised: </br>" + colors)
         
+        
+        var container;
+//        var scores=[320,230,480,120];
+        var scores=[25,35,250];
+        document.write("Scores of students:" + scores);
+        scores.sort(function(a,b){return a-b});
+        document.write("</br>Ordered score of students:" + scores);
+        
+//      Write a program to initialize an array with city names. Copy 3 array elements from cities array to selectedCities array.  
+        var cities=["Karachi","Lahore","Islamabad","Multan","Hyderabad","Rawalpindi"];
+        document.write("Cities:" + cities);
+        var sel_cities=cities.slice(1,4);
+        document.write("</br> 3 Cities:" + sel_cities);
+        
     </script>
 </head>
 <body>
