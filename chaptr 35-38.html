@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+            Q1: Write a function that displays current date & time in your browser.
+        
+        function current_date() {
+        document.write(new Date());
+        }   */
+
+/*
+       Q2: Write a function that takes first & last name and then it greets the user using his full name.
+
+
+
+
+function fullName(input1, input2) {
+    
+    var fullName1 = input1 + input2;
+    alert(`Welcome ${fullName1}`);
+} fullName('Akhtar' , 'Hussain');
+
+*/
+
+/*
+Q3: Write a function that adds two numbers (input by user) and returns the sum of two numbers.
+
+
+function add(num1, num2) {
+    document.write("Sum is ", num2 + num2);
+} add(3,6);
+
+*/
+
+/*
+
+Calculator:
+Write a function that takes three arguments num1, num2 & operator & compute the desired operation. Return and
+show the desired result in your browser.
+
+function calculator(num1, num2, op) {
+    if (op === '+') { document.write("<br>", num1, " ", op, " ", num2, " = ", num + num2) }
+    if (op === '-') { document.write("<br>", num1, " ", op, " ", num2, " = ", num - num2) }
+    if (op === '*') { document.write("<br>", num1, " ", op, " ", num2, " = ", num * num2) }
+    if (op === '/') { document.write("<br>", num1, " ", op, " ", num2, " = ", num / num2) }
+    if (op === '%') { document.write("<br>", num1, " ", op, " ", num2, " = ", num % num2) }
+}
+
+*/
+
+/*
+Q5: Write a function that squares its argument.  
+
+function square(n) {
+    return n * n;
+}square(2);
+ */
+
+/*
+Q6: Write a function that computes factorial of a number.
+function factorial(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    else {
+        for (var i = 1; i < n; i++) {
+            n = n * i;
+        }
+    }
+    return n;
+}
+
+*/
+/*
+Q7: Write a function that take start and end number as inputs & display counting in your browser.
+//-------------------Task 7----------------
+function display(start, end) {
+    for (var i = start; i < end + 1; i++) {
+        document.write(" i :", i);
+    }
+}
+*/
+/*
+Q8: Write a nested function that computes hypotenuse of a right angle triangle.
+Hypotenuse2 = Base2 + Perpendicular2
+Take base and perpendicular as inputs.
+Outer function : calculateHypotenuse()
+Inner function: calculateSquare()
+
+
+
+
+function calculateHypotenuse(base, perpendicular) {
+    let hyp = base * base + perpendicular * perpendicular;
+    document.write(Math.sqrt(hyp));
+
+    function calculateSquare(hyp) {
+        return hyp;
+    }
+}
+
+*/
+/*
+
+
+q9: Write a function that calculates the area of a rectangle.
+ A = width * height
+ Pass width and height in following manner:
+i. Arguments as value
+ii. Arguments as variables
+
+
+
+function area(width = 56, height = 45) {
+    return width * height;
+}
+
+*/
+
+/*
+Q10:Write a JavaScript function that checks whether a passed string is palindrome or not?
+A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam.
+
+
+function palindrome(string) {
+    let rev = "";
+    for (var i = string.length; i >= 0; i--) {
+        rev += string[i];
+    }
+
+    if (string === rev) {
+        document.write("String is palindrome");
+    }
+}
+*/
+/*
+Q11: Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the
+string in upper case.
+EXAMPLE STRING : 'the quick brown fox'
+EXPECTED OUTPUT : 'The Quick Brown Fox'
+
+function uppercase(string) {
+    let splitted_string = string.split(" ");
+    for (var i = 0; i < splitted_string.length; i++) {
+        console.log(splitted_string[i][0].toUpperCase() + splitted_string[i].substr(1, splitted_string[i].length))
+    }
+}
+*/
+/*
+
+Q12: Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
+        EXAMPLE STRING : 'Web Development Tutorial'
+        EXPECTED OUTPUT : 'Development'
+
+function longest_string(string) {
+    let splitted_string = string.split(" ");
+    let max = 0;
+    let longest = "";
+    for (var i = 0; i < splitted_string.length; i++) {
+        if (splitted_string[i].length > max) {
+            max = splitted_string[i].length;
+            longest = splitted_string[i]
+
+        }
+    }
+    console.log("Longest string : ", max, longest)
+} */
+/*
+Q13: Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of 
+occurrences of the specified letter within the string. Sample arguments : 'JSResourceS.com', 'o'
+
+
+
+function count_letter(string, letter) {
+    let count = 0;
+    for (i = 0; i < string.length; i++) {
+        if (letter == string[i]) {
+            count = count + 1;
+        }
+    }
+    console.log(count);
+}
+*/
+
+/*
+The Geometrizer
+Create 2 functions that calculate properties of a circle, using the definitions here.
+Create a function called calcCircumference:
+• Pass the radius to the function.
+• Calculate the circumference based on the radius, and output "The circumference is NN".
+Create a function called calcArea:
+• Pass the radius to the function.
+• Calculate the area based on the radius, and output "The area is NN".
+Circumference of circle = 2πr
+Area of circle = πr2
+
+function calcCircumference(radius) {
+    document.write("The circumference is : ", radius * 3.142, 2);
+}
+
+function calcArea() {
+    document.write("The area is ", radius * radius * 3.142);
+}
+
+*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
