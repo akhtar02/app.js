@@ -6,86 +6,91 @@
     <title>Document</title>
 
     <script>
-        /*     // Q1     Declare an empty array using JS literal notation to store student names in future.
-Declare an empty array using JS object notation to store student names in future.
-Declare and initialize a strings array.
-Declare and initialize a numbers array.
-Declare and initialize a boolean array.
-Declare and initialize a mixed array.
-Declare and Initialize an array and store available education qualifications in Pakistan (e.g. SSC, HSC, BCS, BS, BCOM, MS, M. Phil., PhD). Show the listed qualifications in your browser like:
- */
-        
-        var empty_array = [];
-        var string_array = ["Atif","Kashif","Iqbal"];
-        var num_array = [99,100,101]
-        var bool_array = [true,true,false];
-        var mix_array=["atif",99, true]
-        var edu_array = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "M. Phil.", "PhD"];
-        document.write("Qualifications:</br>");
-        for (i=0;i<edu_array.length;i++){
-            document.write(i+1+")"+ edu_array[i] + "</br>" );
-            }
-        
-        
-        
-        
-    var container;
-        var colors=["red","green","blue","yellow"];
-        document.write("Original array is: </br>" + colors);
-        
-/*
-//Ask the user what color he/she wants to add to the beginning & add that color to the beginning of the array. Display the updated array in your browser.    
-        container=prompt("Which colour you want to add at the end of the array?")
-        colors.push(container);
-        document.write("</br></br> New color has been added to the end: </br>" + colors);
-*/
-        
-/*
-//Add two more color to the beginning of the array. Display the updated array in your browser.
-        container=prompt("Which colour you want to add at the beginning of the array?");
-        colors.unshift(container);
-        container=prompt("Which other colour you want to add at the beginning of the array?");
-        colors.unshift(container);
-        document.write("</br></br>2 new colors have been added to the beginning of the array: </br>" + colors);
-*/
+//--------------------task 1------------------
+var array = [];
 
-/*
-//Delete the first color in the array. Display the updated array in your browser.
-        colors.shift();
-        document.write("</br></br>The 1st color has been deleted from the beginning of the array: </br>" + colors);
-*/
-        
-/*
-//Delete the last color in the array. Display the updated array in your browser.
-        colors.pop();
-        document.write("</br></br>The last color has been deleted from the end of the array: </br>" + colors);
-*/
+//--------------------task 2------------------
+var array2 = new Array();
+//--------------------task 3------------------
+var string = ["name"];
+//--------------------task 4------------------
+var number = [5];
+//--------------------task 5------------------
+var boolean = [true];
+//--------------------task 6------------------
+var mixed_array = ['name', 45, true];
 
-/*//Ask the user at which index he/she wants to add a color & color name. Then add the color to desired position/index. . Display the updated array in your browser. 
-        container=prompt("Which colour you want to add in the array?");
-        var loc = prompt("Which index number do you want to add it in the array?");
-        colors.splice(loc,0,container);
-        document.write("</br></br>The array has been revised: </br>" + colors);*/
+//--------------------task 7------------------
+var education = ["ssc", "hssc", "bcs", "bs", "bcom", "Ms", "Mphil", "Phd"];
+for (i = 0; i < education.length; i++) {
+    document.write("<br>", i + 1, ") ", education[i].toUpperCase());
+}
 
-//Ask the user at which index he/she wants to delete color(s) & how many colors he/she wants to delete. Then remove the same number of color(s) from user-defined position/index. . Display the updated array in your browser.
-        var start=prompt("From which index number do you want to start deleting in the array?");
-        var total = prompt("How many do you want to delete?");
-        colors.splice(start,total);
-        document.write("</br></br>The array has been revised: </br>" + colors)
-        
-        
-        var container;
-//        var scores=[320,230,480,120];
-        var scores=[25,35,250];
-        document.write("Scores of students:" + scores);
-        scores.sort(function(a,b){return a-b});
-        document.write("</br>Ordered score of students:" + scores);
-        
-//      Write a program to initialize an array with city names. Copy 3 array elements from cities array to selectedCities array.  
-        var cities=["Karachi","Lahore","Islamabad","Multan","Hyderabad","Rawalpindi"];
-        document.write("Cities:" + cities);
-        var sel_cities=cities.slice(1,4);
-        document.write("</br> 3 Cities:" + sel_cities);
+//--------------------task 8------------------
+var students = ['michael', 'john', 'tony'];
+var scores = [320, 230, 480];
+
+for (var i = 0; i < students.length; i++) {
+    document.write("<br>", "Score of ", students[i], " is ", scores[i], " Percentage : ", (scores * 100 / 500), "%")
+}
+
+//--------------------task 9------------------
+var colors = ["red", "blue", 'yellow', "pink", "green"];
+document.write("<br>", colors.shift(prompt("Enter color name")))
+document.write("<br>", colors.push(prompt("Enter color name")))
+document.write("<br>", colors.splice(0, 0, ["pink", "purple"]))
+document.write("<br>", colors.unshift())
+document.write("<br>", colors.pop())
+var number = +prompt("enter index");
+var color = prompt("enter color");
+document.write("<br>", colors.splice(number, 0, color));
+var number = prompt("enter number odf elements");
+var index = prompt("enter index");
+document.write("<br>", colors.splice(index, number))
+
+
+//--------------------task 10------------------
+var sort = [320, 230, 480, 120];
+document.write("<br>", "Obtained Scores of Students: ", (sort.sort()).join(" ,"));
+
+
+
+//--------------------task 11------------------
+var city = ["Karachi", "Lahore", "Islamabad", "Quetta", "Peshawar"];
+var selectedCities = city.slice(3, 6);
+document.write("<br>", selectedCities.join(" ,"));
+
+
+//--------------------task 12------------------
+var arr = ["This ", "is ", "my ", "cat"];
+document.write("<br>", arr.join(" ,"));
+
+
+//--------------------task 13------------------
+var devices = ["Keyboard", "Mouse", "Printer", "Monitor"];
+
+document.write("<br>", "Devices: ", devices.join(" ,"));
+
+for (var i = 0; i < devices.length; i++) {
+    document.write("<br>", "Out : \n", devices[i]);
+}
+
+
+//--------------------task 14------------------
+document.write("<br>", "Devices: ", devices.join(" ,"));
+for (var i = devices.length - 1; i >= 0; i--) {
+    document.write("<br>", "Out : \n", devices[i]);
+}
+
+
+
+//--------------------task 15------------------
+var store = ["Apple", "Samsung", "Motorolla", "Nokia", "Sony", "Haier"];
+document.write("<br>", "<select>");
+for (var i = 0; i < store.length; i++) {
+    document.write("<br>", "<option>", store[i], "</option>");
+}
+document.write("<br>", '</select');
         
     </script>
 </head>
